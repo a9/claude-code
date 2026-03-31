@@ -1,0 +1,8 @@
+{
+  "extends": "@tsconfig/bun",
+  "compilerOptions": {
+    "paths": {
+      "src/*": ["./src/*"]
+    }
+  }
+}
