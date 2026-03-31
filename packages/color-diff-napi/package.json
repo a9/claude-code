@@ -1,0 +1,7 @@
+{
+  "name": "color-diff-napi",
+  "version": "0.0.1",
+  "description": "TS port of color-diff-napi, re-exports from the native-ts implementation",
+  "main": "index.ts",
+  "types": "index.ts"
+}

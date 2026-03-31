@@ -1,0 +1,7 @@
+{
+  "name": "@ant/claude-for-chrome-mcp",
+  "version": "0.0.0-mock",
+  "description": "Mock implementation of @ant/claude-for-chrome-mcp",
+  "main": "index.ts",
+  "types": "index.ts"
+}
