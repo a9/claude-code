@@ -38,7 +38,6 @@ bun src/dev-entry.ts -p "your prompt"
 Requires `ANTHROPIC_API_KEY` environment variable, or a prior login via the `claude` CLI.
 
 ![help](./screenshot-help.png)
-![help2](./screenshot-help2.png)
 
 ## Development
 
