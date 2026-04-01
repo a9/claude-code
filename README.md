@@ -2,6 +2,8 @@
 
 Claude Code CLI 的源代码，从发布包中提取并补全了缺失的类型定义，重构为 Bun monorepo 结构。
 
+![screenshot](./screenshot.png)
+
 ## 项目结构
 
 ```
@@ -34,6 +36,9 @@ bun src/dev-entry.ts -p "你的问题"
 ```
 
 需要设置 `ANTHROPIC_API_KEY` 环境变量，或已通过 `claude` CLI 登录。
+
+![help](./screenshot-help.png)
+![help2](./screenshot-help2.png)
 
 ## 开发
 
