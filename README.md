@@ -1,68 +1,68 @@
 # Claude Code (Source)
 
-Claude Code CLI 的源代码，从发布包中提取并补全了缺失的类型定义，重构为 Bun monorepo 结构。
+Source code of the Claude Code CLI, extracted from the published package with missing type definitions restored and restructured as a Bun monorepo.
 
 ![screenshot](./screenshot.png)
 
-## 项目结构
+## Project Structure
 
 ```
 apps/
-  claude-code/          # 主应用
+  claude-code/              # Main application
 packages/
-  claude-for-chrome-mcp/  # @ant/claude-for-chrome-mcp mock 包
-  color-diff-napi/        # color-diff-napi workspace 包
+  claude-for-chrome-mcp/    # @ant/claude-for-chrome-mcp mock package
+  color-diff-napi/          # color-diff-napi workspace package
 ```
 
-## 前置要求
+## Prerequisites
 
 - [Bun](https://bun.sh/) >= 1.1
 
-## 安装依赖
+## Install
 
 ```bash
 bun install
 ```
 
-## 使用
+## Usage
 
 ```bash
-# 启动交互式 REPL
+# Start interactive REPL
 cd apps/claude-code
 bun src/dev-entry.ts
 
-# 单次提问（非交互模式）
-bun src/dev-entry.ts -p "你的问题"
+# One-shot prompt (non-interactive)
+bun src/dev-entry.ts -p "your prompt"
 ```
 
-需要设置 `ANTHROPIC_API_KEY` 环境变量，或已通过 `claude` CLI 登录。
+Requires `ANTHROPIC_API_KEY` environment variable, or a prior login via the `claude` CLI.
 
 ![help](./screenshot-help.png)
 ![help2](./screenshot-help2.png)
 
-## 开发
+## Development
 
-`dev-entry.ts` 是开发入口，它会在运行时 polyfill Bun 编译器注入的宏（`MACRO`、`feature()`），使源码无需打包即可直接运行。
+`dev-entry.ts` is the development entry point. It polyfills compile-time macros (`MACRO`, `feature()`) injected by Bun's bundler, allowing the source to run directly without bundling.
 
 ```bash
-# 启动开发模式
+# Start dev mode
 cd apps/claude-code
 bun run start
 
-# 快速测试
+# Quick test
 bun run hello
 ```
 
-### 类型检查
+### Linting & Type Checking
 
 ```bash
-# 使用 oxlint 做快速 lint
+# Fast lint with oxlint
 bunx oxlint apps/claude-code/src/
 
-# TypeScript 类型检查（有大量已知错误，仅供参考）
+# TypeScript type check (many known errors, for reference only)
 bunx tsc --noEmit -p apps/claude-code/tsconfig.json
 ```
 
-### 补全的文件
+### Restored Files
 
-所有相对原始发布包新增或修改的文件清单见 [CHANGES.md](./CHANGES.md)。
+See [CHANGES.md](./CHANGES.md) for a full manifest of files added or modified relative to the original published package.
